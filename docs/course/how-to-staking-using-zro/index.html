@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to start ZORRO Staking on zro ?#  The Staking feature is supported by full-node programs
+This article is mainly provided for users of full-node background program. Users of the wallet with a graphical interface, please wait for the subsequent documentation.
+Staking function will be effective after the height of block 117600
+ A brief description of the process of Staking#  POS miners can buy voting shares in the shares pool.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="How to start ZORRO Staking on zro" />
+<meta property="og:description" content="How to start ZORRO Staking on zro ?#  The Staking feature is supported by full-node programs
+This article is mainly provided for users of full-node background program. Users of the wallet with a graphical interface, please wait for the subsequent documentation.
+Staking function will be effective after the height of block 117600
+ A brief description of the process of Staking#  POS miners can buy voting shares in the shares pool." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Ethan-91.github.io/docs/course/how-to-staking-using-zro/" />
+
+<title>How to start ZORRO Staking on zro | ZORRO</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="alternate" hreflang="zh" href="https://Ethan-91.github.io/zh/docs/course/how-to-staking-using-zro/" title="如何在ZORRO上进行Staking">
+
+<link rel="stylesheet" href="/book.min.b3215d9d1d18d9051e7fbe8f256ff80e30f41d29073b86348e230d297b771002.css" integrity="sha256-syFdnR0Y2QUef76PJW/4DjD0HSkHO4Y0jiMNKXt3EAI=">
+<script defer src="/en.search.min.88a517a499b999098a8e8b3e0562c5d902d3c5b21c6a48ea82992489b1c4fdf9.js" integrity="sha256-iKUXpJm5mQmKjos&#43;BWLF2QLTxbIcakjqgpkkibHE/fk="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>ZORRO</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Getting started</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/introduction/build-from-sourcecoude/" class="">Build from the source code</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/introduction/operate-in-console/" class="">Console operation</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/course/service-interface/" class="">Service Interface(SI) Description</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/course/exchange-interface/" class="">Exchange Interface(EI) Description</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/course/flight-interface/" class="">Flight Interface(FI) Description</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/course/principle-of-anonymous-token/" class="">Anonymous tokens issuance principle</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/course/how-to-staking-using-zro/" class="active">How to start ZORRO Staking on zro</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>How to start ZORRO Staking on zro</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-brief-description-of-the-process-of-staking">A brief description of the process of Staking</a></li>
+    <li><a href="#solo-staking">SOLO Staking</a>
+      <ul>
+        <li><a href="#prerequisites-for-solo">Prerequisites for SOLO</a></li>
+        <li><a href="#steps">Steps</a></li>
+        <li><a href="#1-summary-of-steps">1. Summary of steps</a></li>
+        <li><a href="#2-confirm-the-asset-account">2. Confirm the asset account</a></li>
+        <li><a href="#3-create-a-voting-account">3. Create a voting account</a></li>
+        <li><a href="#4-view-the-shares-pool-status">4. View the shares pool status</a></li>
+        <li><a href="#5-subscribe-for-shares">5. Subscribe for shares</a></li>
+        <li><a href="#6-view-account-balance">6. View account balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-create-a-staking-node">How to create a Staking Node</a>
+      <ul>
+        <li><a href="#precondition">Precondition</a></li>
+        <li><a href="#steps-1">Steps</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-select-staking-node-as-a-voting-proxy-to-vote-for-yourself">How to select Staking Node as a voting proxy to vote for yourself</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#return-of-principal">Return of principal</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-to-start-zorro-staking-on-zro-">
+  <strong>How to start ZORRO Staking on zro ?</strong>
+  <a class="anchor" href="#how-to-start-zorro-staking-on-zro-">#</a>
+</h1>
+<hr>
+<blockquote>
+<p>The <code>Staking</code> feature is supported by full-node programs</p>
+<p>This article is mainly provided for users of full-node background program. Users of the wallet with a graphical interface, please wait for the subsequent documentation.</p>
+<p><strong>Staking function will be effective after the height of block <code>117600</code></strong></p>
+</blockquote>
+<h2 id="a-brief-description-of-the-process-of-staking">
+  A brief description of the process of Staking
+  <a class="anchor" href="#a-brief-description-of-the-process-of-staking">#</a>
+</h2>
+<ul>
+<li>
+<p>POS miners can buy voting shares in the shares pool.</p>
+<ul>
+<li>Shares have a pool of shares with no upper limit.</li>
+<li>The price of the shares is dynamically adjusted according to the size of the shares pool.</li>
+<li>The share price change within the pool size of 326592 is relatively balanced.</li>
+<li>After the stock pool size exceeded 326,592, the share price rose sharply.</li>
+</ul>
+</li>
+<li>
+<p>After the POW miner calculates the block HASH, he need to randomly select 3 shares in the shares pool and broadcast the ballot information.</p>
+</li>
+<li>
+<p>After receiving the ballot information of their own, the POS miner immediately broadcasts the voting information with his signature.</p>
+</li>
+<li>
+<p>After receiving the voting information of the POS miner, the POW miner puts the signature into the block header information.</p>
+</li>
+<li>
+<p>If more than 2 votes are correctly voted, the POW miner will broadcast the block and complete the block process.</p>
+</li>
+<li>
+<p>POS miner can choose SOLO voting or StakingNode proxy voting.</p>
+</li>
+<li>
+<p>Each block reward are divided into POW rewards and POS rewards.</p>
+<ul>
+<li>The ratio of POW rewards to POS rewards is 4 : 4</li>
+<li>The amount of POW rewards and POS rewards varies independently of each difficulty.</li>
+</ul>
+</li>
+<li>
+<p>POS rewards are divided into Solo voting and StakingNode proxy voting.</p>
+<ul>
+<li>The income ratio of Solo voting and StakingNode proxy voting is 3 : 4</li>
+</ul>
+</li>
+<li>
+<p>After the voting process is completed, the reward and principal will be returned within the latest payment cycle (about 1 week).</p>
+</li>
+</ul>
+<h2 id="solo-staking">
+  SOLO Staking
+  <a class="anchor" href="#solo-staking">#</a>
+</h2>
+<p>You should have a full-node program (zro) and have a certain number of ZORRO tokens to make a SOLO vote and get a proportion of 3 POS rewards.</p>
+<h3 id="prerequisites-for-solo">
+  Prerequisites for SOLO
+  <a class="anchor" href="#prerequisites-for-solo">#</a>
+</h3>
+<ol>
+<li>A continuously running full-node program (zro), which has completed the block synchronously.</li>
+<li>There is a certain amount of ZORRO coins in the account.</li>
+</ol>
+<h3 id="steps">
+  Steps
+  <a class="anchor" href="#steps">#</a>
+</h3>
+<h3 id="1-summary-of-steps">
+  1. Summary of steps
+  <a class="anchor" href="#1-summary-of-steps">#</a>
+</h3>
+<ol>
+<li>Confirm that there are enough ZORRO coins to buy shares.
+<ul>
+<li><strong>The principal will also be returned when the proceed is released or the share is expired</strong></li>
+</ul>
+</li>
+<li>Create a voting account.</li>
+<li>Enable automatic voting function (unlock voting account).。</li>
+<li>Buy shares in the shares pool.</li>
+<li>View current share status.</li>
+<li>Confirm revenue.</li>
+</ol>
+<blockquote>
+<p><strong>Note: the account key must be backed up. Ordinary users can copy the keystore for backup or export mnemonics:</strong></p>
+</blockquote>
+<blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">personal</span>.<span style="color:#a6e22e">exportMnemonic</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>])
+<span style="color:#66d9ef">export</span> <span style="color:#a6e22e">account</span> <span style="color:#a6e22e">mnemonic</span> <span style="color:#ae81ff">5</span><span style="color:#a6e22e">bEgN9YL</span>......<span style="color:#a6e22e">Xrpti4zeamkdD16C</span>
+<span style="color:#a6e22e">Passphrase</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1234</span>                             <span style="color:#75715e">// Password
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;casino crys ... ... en unaware route&#34;</span>
+</code></pre></div><p>The mnemonics can be imported like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">personal</span>.<span style="color:#a6e22e">importMnemonic</span>(<span style="color:#e6db74">&#34;casino cry ... ... re route&#34;</span>,<span style="color:#e6db74">&#34;1234&#34;</span>)  <span style="color:#75715e">//1234 is password
+</span></code></pre></div></blockquote>
+<h3 id="2-confirm-the-asset-account">
+  2. Confirm the asset account
+  <a class="anchor" href="#2-confirm-the-asset-account">#</a>
+</h3>
+<p>For safety, ZORRO&rsquo;s asset account and voting account are separated, principal and reward will only be handled by asset account, and we now confirm the asset account.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>]
+<span style="color:#e6db74">&#34;5bEgN9YLqC......4zeamkdD16C&#34;</span>   <span style="color:#75715e">// PK
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">fromTa</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getBalance</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>]).<span style="color:#a6e22e">tkn</span>.<span style="color:#a6e22e">ZORRO</span>)
+<span style="color:#ae81ff">10</span>               <span style="color:#75715e">//20 ZORRO coins
+</span></code></pre></div><h3 id="3-create-a-voting-account">
+  3. Create a voting account
+  <a class="anchor" href="#3-create-a-voting-account">#</a>
+</h3>
+<p>The voting account does not process assets and is only used for voting signatures.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">personal</span>.<span style="color:#a6e22e">newAccount</span>(<span style="color:#e6db74">&#34;1234&#34;</span>)
+<span style="color:#e6db74">&#34;2tuxyM5uL4......Ce5xNPokr&#34;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>]
+<span style="color:#e6db74">&#34;2tuxyM5uL4......Ce5xNPokr&#34;</span>    <span style="color:#75715e">// PK
+</span></code></pre></div><p><strong>The voting account needs to be permanently unlocked so that voting can be conducted quickly after being drawn.</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">personal</span>.<span style="color:#a6e22e">unlockAccount</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#34;1234&#34;</span>,<span style="color:#ae81ff">0</span>)
+</code></pre></div><p><strong>Note: SOLO Staking needs to ensure the stability of the entire node network, otherwise the vote may MISS.</strong></p>
+<h3 id="4-view-the-shares-pool-status">
+  4. View the shares pool status
+  <a class="anchor" href="#4-view-the-shares-pool-status">#</a>
+</h3>
+<ul>
+<li>
+<p>The interfaces related to staking are in the stake object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>
+{
+  <span style="color:#a6e22e">sharePoolSize</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,               <span style="color:#75715e">// Current size of the shares pool
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">sharePrice</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x1bc16d674ec80000&#34;</span>,   <span style="color:#75715e">// Current share price
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">buyShare</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">closeStakePool</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">getShare</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">getSharePoolSize</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>),
+  <span style="color:#a6e22e">getSharePrice</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>),
+  <span style="color:#a6e22e">modifyStakePoolFee</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">modifyStakePoolVote</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">myShare</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">poolState</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">registStakePool</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(),
+  <span style="color:#a6e22e">stakePools</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>()
+}
+</code></pre></div></li>
+<li>
+<p>View the current shares pool information</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">fromTa</span>(<span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toDecimal</span>(<span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">sharePrice</span>))
+<span style="color:#e6db74">&#34;2&#34;</span>     <span style="color:#75715e">// The current share price is 2 ZORRO
+</span><span style="color:#75715e"></span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toDecimal</span>(<span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">sharePoolSize</span>)
+<span style="color:#ae81ff">0</span>       <span style="color:#75715e">// There are 0 shares in the current shares pool.
+</span></code></pre></div></li>
+</ul>
+<h3 id="5-subscribe-for-shares">
+  5. Subscribe for shares
+  <a class="anchor" href="#5-subscribe-for-shares">#</a>
+</h3>
+<ul>
+<li>
+<p>Estimate the number of shares that can be purchased</p>
+<ul>
+<li>Since the share price increases linearly with the size of the pool, it is necessary to estimate the number of shares that can be purchased first.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">estimateShares</span>({
+      <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>],        <span style="color:#75715e">//Asset account
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">vote</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>],        <span style="color:#75715e">//Voting account
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span><span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toTa</span>(<span style="color:#ae81ff">20</span>)           <span style="color:#75715e">//Total amount that can be staked
+</span><span style="color:#75715e"></span>})
+{
+  <span style="color:#a6e22e">avPrice</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x1bc6ab6c2dfe1734&#34;</span>,          <span style="color:#75715e">//Average share price
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">basePrice</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x1bc16d674ec80000&#34;</span>,        <span style="color:#75715e">//Base share price
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">total</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x9&#34;</span>                            <span style="color:#75715e">//Purchasable quantity
+</span><span style="color:#75715e"></span>}
+</code></pre></div></li>
+<li>
+<p>Subscription，from: Asset account, vote: voting account, value: subscription fund</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span>   <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">buyShare</span>({<span style="color:#a6e22e">from</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>],<span style="color:#a6e22e">vote</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>],<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span><span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toTa</span>(<span style="color:#ae81ff">20</span>)})
+<span style="color:#e6db74">&#34;0xac137baf4cd195....17c1fcb3edae4d25&#34;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getTransactionReceipt</span>(<span style="color:#e6db74">&#34;0xac137baf4....cb3edae4d25&#34;</span>)
+{
+  ....
+  <span style="color:#a6e22e">poolId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">shareId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb5b01116f......71015afc6f&#34;</span>,   <span style="color:#75715e">//ID of Purchased shares
+</span><span style="color:#75715e"></span>  ....
+}
+</code></pre></div></li>
+<li>
+<p>Check the status of the shares purchase</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">getShare</span>(<span style="color:#e6db74">&#34;0xb5b01116f......71015afc6f&#34;</span>)
+{
+  <span style="color:#a6e22e">addr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;5bEgN9YLq......4zeamkdD16C&#34;</span>,
+  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb5b01116f3e8......2a08b28171015afc6f&#34;</span>,      <span style="color:#75715e">// ID of Purchased
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">missed</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+  <span style="color:#a6e22e">num</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+  <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2001844456911510800</span>,                       <span style="color:#75715e">// The average price
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">returnAmount</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20814755655292090000</span>,               <span style="color:#75715e">// Amount refunded
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+  <span style="color:#a6e22e">total</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9</span>,                                         <span style="color:#75715e">// Number of shares
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">tx</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x47a87164f......13e422efee&#34;</span>,
+  <span style="color:#a6e22e">voteAddr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2tuxyM5uL4ZDk......4xdTPCe5xNPokr&#34;</span>     <span style="color:#75715e">// Collection code of voting account
+</span><span style="color:#75715e"></span>}
+</code></pre></div></li>
+<li>
+<p>View my total shares</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">myShare</span>(<span style="color:#e6db74">&#34;5bEgN9YLqCBN9......pti4zeamkdD16C&#34;</span>)
+[{
+    <span style="color:#a6e22e">addr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;5bEgN9YLqCB......rpti4zeamkdD16C&#34;</span>,
+    <span style="color:#a6e22e">expired</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,                                <span style="color:#75715e">// Number of expired shares
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">missed</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,                                 <span style="color:#75715e">// Vote miss number
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">pools</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+    <span style="color:#a6e22e">remaining</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,                             <span style="color:#75715e">// The remaining number of shares
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">shareIds</span><span style="color:#f92672">:</span> [                                <span style="color:#75715e">// List of shares IDs I own
+</span><span style="color:#75715e"></span>      <span style="color:#e6db74">&#34;0x3f2ae......a0c656d9b7b7&#34;</span>,
+      <span style="color:#e6db74">&#34;0x58395b1......cfa4141d&#34;</span>,
+      <span style="color:#e6db74">&#34;0xb5b011......171015afc6f&#34;</span>
+    ],
+    <span style="color:#a6e22e">total</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>,                                 <span style="color:#75715e">// My total number of shares
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">voteAddr</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;2tuxyM5uL4ZDkfp......Vtw4xdTPCe5xNPokr&#34;</span>]    <span style="color:#75715e">// My vote ID
+</span><span style="color:#75715e"></span>}]
+</code></pre></div></li>
+</ul>
+<h3 id="6-view-account-balance">
+  6. View account balance
+  <a class="anchor" href="#6-view-account-balance">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">fromTa</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getBalance</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>]).<span style="color:#a6e22e">tkn</span>.<span style="color:#a6e22e">ZORRO</span>)   <span style="color:#75715e">// Asset account
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">339.980079865355683522</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getBalance</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>])    <span style="color:#75715e">//Voting account
+</span><span style="color:#75715e"></span>{}
+</code></pre></div><h2 id="how-to-create-a-staking-node">
+  How to create a Staking Node
+  <a class="anchor" href="#how-to-create-a-staking-node">#</a>
+</h2>
+<p>Due to unstable personal network, or unable to open the full-node continuously, then it is possible to entrust <code>Staking Node</code> to vote on behalf of them.</p>
+<p>Here&rsquo;s how to create a <code>Staking Node</code> for voting.</p>
+<h3 id="precondition">
+  Precondition
+  <a class="anchor" href="#precondition">#</a>
+</h3>
+<ol>
+<li>Have a continuous online full-node program (zro).</li>
+<li>Have an account with a 200,000 ZORRO balance.</li>
+<li>Have a good network environment.</li>
+</ol>
+<h3 id="steps-1">
+  Steps
+  <a class="anchor" href="#steps-1">#</a>
+</h3>
+<h4 id="1-step-summary">
+  1. Step summary
+  <a class="anchor" href="#1-step-summary">#</a>
+</h4>
+<ol>
+<li>Confirm that there are 200,000 ZORRO coins used for pledge.
+<ul>
+<li>When the Node is closed, the principal will be returned.</li>
+</ul>
+</li>
+<li>Create a proxy voting account.</li>
+<li>Turn on the automatic voting function (unlock the voting account).</li>
+<li>Pledge ZORRO coins to open Staking Node</li>
+<li>View the current node delegation status.</li>
+<li>Confirm revenue.</li>
+</ol>
+<h4 id="2-confirm-asset-account">
+  2. Confirm asset account
+  <a class="anchor" href="#2-confirm-asset-account">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>]
+<span style="color:#e6db74">&#34;5bEgN9YLqC......4zeamkdD16C&#34;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">fromTa</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getBalance</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>]).<span style="color:#a6e22e">tkn</span>.<span style="color:#a6e22e">ZORRO</span>)
+<span style="color:#ae81ff">200000.980079865355683522</span>
+</code></pre></div><h4 id="3-create-a-proxy-voting-account">
+  3. Create a proxy voting account
+  <a class="anchor" href="#3-create-a-proxy-voting-account">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">personal</span>.<span style="color:#a6e22e">newAccount</span>(<span style="color:#e6db74">&#34;1234&#34;</span>)
+<span style="color:#e6db74">&#34;2tuxyM5uL4......w4xdTPCe5xNPokr&#34;</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>]
+<span style="color:#e6db74">&#34;2tuxyM5uL4......Ce5xNPokr&#34;</span>
+</code></pre></div><h4 id="4-enable-automatic-voting-function-unlock-the-voting-account">
+  4. Enable automatic voting function (unlock the voting account)
+  <a class="anchor" href="#4-enable-automatic-voting-function-unlock-the-voting-account">#</a>
+</h4>
+<p><strong>Voting accounts need to be permanently unlocked so that they can be voted quickly after being drawn.</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">personal</span>.<span style="color:#a6e22e">unlockAccount</span>(<span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#34;1234&#34;</span>,<span style="color:#ae81ff">0</span>)
+</code></pre></div><p><strong>Note:</strong> StakingNode needs to ensure that the entire node network is stable, otherwise it may lead to voting MISS, and the vote of MISS may lead to an increase in the principal locking time of StakingNode.</p>
+<h4 id="5-register-staking-node-by-pledging-zorro-coins">
+  5. Register Staking Node by pledging ZORRO coins
+  <a class="anchor" href="#5-register-staking-node-by-pledging-zorro-coins">#</a>
+</h4>
+<p>The client needs to connect more than 10 <code>peers</code> to open the command to register the staking node.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">admin</span>.<span style="color:#a6e22e">peers</span>.<span style="color:#a6e22e">length</span>
+<span style="color:#ae81ff">15</span>
+</code></pre></div><p>Start registering <code>StakingNode</code>, note that in this example <code>accounts[0]</code> has 200,000 ZORRO coins, which is a asset account.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">registStakePool</span>({
+      <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>],        <span style="color:#75715e">//asset account
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">vote</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">1</span>],        <span style="color:#75715e">//voting account
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span><span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toTa</span>(<span style="color:#ae81ff">200000</span>),      <span style="color:#75715e">//Registered fund
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">fee</span><span style="color:#f92672">:</span><span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toHex</span>(<span style="color:#ae81ff">2500</span>)          
+<span style="color:#75715e">// Draw, 7500 represents 75%, 2500 represents 25%, and the maximum draw is 75%.
+</span><span style="color:#75715e"></span>})
+<span style="color:#e6db74">&#34;0xecb3b5b235....8d35d7d1651&#34;</span>       <span style="color:#75715e">//Register generated transaction hash
+</span></code></pre></div><p>You can view the <code>ID</code> of the registered <code>StakingNode</code> by viewing the transaction receipt.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getTransactionReceipt</span>(<span style="color:#e6db74">&#34;0xecb3b5b....7d1651&#34;</span>)
+{
+  ......
+  <span style="color:#a6e22e">poolId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb1e20b74......2b35888176d&#34;</span>,          <span style="color:#75715e">//StakingNode ID
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">shareId</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  ......
+}
+</code></pre></div><p>**Note:**<code>StakingNode</code> 
+The pledge of the principal needs to be locked for 1 months before it can be unlocked, but it must be closed after closing the staking node and no shares point to the staking node.</p>
+<h4 id="6-view-current-node-delegation-status-and-revenue">
+  6. View current node delegation status and revenue
+  <a class="anchor" href="#6-view-current-node-delegation-status-and-revenue">#</a>
+</h4>
+<p>The status of <code>StakingNode</code> can be viewed via the <code>poolState</code> method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&gt;</span> stake<span style="color:#f92672">.</span><span style="color:#a6e22e">poolState</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;0xb1e20b......88176d&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">{</span>
+  choicedNum<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span><span style="color:#f92672">,</span>    <span style="color:#75715e">// Number of shares selected
+</span><span style="color:#75715e"></span>  closed<span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">,</span>        <span style="color:#75715e">// Is Staking Node closed?
+</span><span style="color:#75715e"></span>  createAt<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x11&#34;</span><span style="color:#f92672">,</span>     <span style="color:#75715e">// Staking Node created time
+</span><span style="color:#75715e"></span>  expireNum<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span><span style="color:#f92672">,</span>     <span style="color:#75715e">// Number of expired entrusted shares of Staking Node
+</span><span style="color:#75715e"></span>  fee<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xfa0&#34;</span><span style="color:#f92672">,</span>         <span style="color:#75715e">// Withdrawal of Staking Node
+</span><span style="color:#75715e"></span>  id<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb1e20b7......88176d&#34;</span><span style="color:#f92672">,</span>  <span style="color:#75715e">//Staking Node的ID
+</span><span style="color:#75715e"></span>  idPkr<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2E7uXmU9......GeQyGBzSvWE&#34;</span><span style="color:#f92672">,</span>
+  lastPayTime<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span><span style="color:#f92672">,</span>   <span style="color:#75715e">// Lastest payment time
+</span><span style="color:#75715e"></span>  missedNum<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span><span style="color:#f92672">,</span>     <span style="color:#75715e">// Missed votes
+</span><span style="color:#75715e"></span>  own<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;5bEgN9YLqC......4zeamkdD16C&#34;</span><span style="color:#f92672">,</span>                    
+  shareNum<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span><span style="color:#f92672">,</span>      <span style="color:#75715e">// Total number of shares
+</span><span style="color:#75715e"></span>  tx<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xecb3b5b......d1651&#34;</span><span style="color:#f92672">,</span>
+  voteAddress<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2tuxyM5uL4......w4xdTPCe5xNPokr&#34;</span><span style="color:#f92672">,</span>
+  wishVoteNum<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span><span style="color:#f92672">,</span>
+  profit<span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x100&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="how-to-select-staking-node-as-a-voting-proxy-to-vote-for-yourself">
+  How to select Staking Node as a voting proxy to vote for yourself
+  <a class="anchor" href="#how-to-select-staking-node-as-a-voting-proxy-to-vote-for-yourself">#</a>
+</h2>
+<p>Ordinary users only need to specify the Staking Node when they purchase the shares, so they can enjoy the convenient voting service without deploying the full-node program.</p>
+<h4 id="1query-the-staking-node-list-of-the-whole-network">
+  1.Query the Staking Node list of the whole network
+  <a class="anchor" href="#1query-the-staking-node-list-of-the-whole-network">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">stakePools</span>()
+[{
+    <span style="color:#a6e22e">choicedNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,                          <span style="color:#75715e">// Number of shares selected
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">closed</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,                              <span style="color:#75715e">// Whether to be closed
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">createAt</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,
+    <span style="color:#a6e22e">expireNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,                           <span style="color:#75715e">// Number of expired shares
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fee</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xfa0&#34;</span>,                               <span style="color:#75715e">// Draw proportion
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb1e20b7......2b35888176d&#34;</span>,           <span style="color:#75715e">// StakingNode ID
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">idPkr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2E7uXm......yGBzSvWE&#34;</span>,
+    <span style="color:#a6e22e">lastPayTime</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,
+    <span style="color:#a6e22e">missedNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,                           <span style="color:#75715e">// Missed votes
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">own</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4ujQrFsaYq......WZzxtnqgTsL&#34;</span>,
+    <span style="color:#a6e22e">shareNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,                            <span style="color:#75715e">// Number of shares
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">tx</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xecb3b5b......35d7d1651&#34;</span>,
+    <span style="color:#a6e22e">voteAddress</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;21F6gyEUw......zMZ5VtGL2&#34;</span>,
+    <span style="color:#a6e22e">wishVoteNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>
+}, {
+    <span style="color:#a6e22e">choicedNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xac&#34;</span>,
+    <span style="color:#a6e22e">closed</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    <span style="color:#a6e22e">createAt</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>,
+    <span style="color:#a6e22e">expireNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x30d&#34;</span>,
+    <span style="color:#a6e22e">fee</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x123b&#34;</span>,
+    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xc48e455......2af708a&#34;</span>,
+    <span style="color:#a6e22e">idPkr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2WCHu3......jbFrXWE&#34;</span>,
+    <span style="color:#a6e22e">lastPayTime</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x12b404&#34;</span>,
+    <span style="color:#a6e22e">missedNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x60&#34;</span>,
+    <span style="color:#a6e22e">own</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;2WCHu3bM......jbFrXWE&#34;</span>,
+    <span style="color:#a6e22e">shareNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x4fe&#34;</span>,
+    <span style="color:#a6e22e">tx</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb9a0a......dc0212&#34;</span>,
+    <span style="color:#a6e22e">voteAddress</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JyRPyD8n......bucfZbRH&#34;</span>,
+    <span style="color:#a6e22e">wishVoteNum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x0&#34;</span>
+}]
+</code></pre></div><h4 id="2-when-buying-shares-choose-to-vote-on-behalf-of-a-staking-node">
+  2. When buying shares, choose to vote on behalf of a staking node.
+  <a class="anchor" href="#2-when-buying-shares-choose-to-vote-on-behalf-of-a-staking-node">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">buyShare</span>({
+      <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>],
+      <span style="color:#a6e22e">vote</span><span style="color:#f92672">:</span><span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">accounts</span>[<span style="color:#ae81ff">0</span>],
+      <span style="color:#a6e22e">pool</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;0xc48e45......af708a&#34;</span>,    <span style="color:#75715e">// Select StakingNode ID
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span><span style="color:#a6e22e">web3</span>.<span style="color:#a6e22e">toTa</span>(<span style="color:#ae81ff">2000</span>)
+})
+<span style="color:#e6db74">&#34;0xb524ec5......b8d511b0b&#34;</span>
+
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">zorro</span>.<span style="color:#a6e22e">getTransactionReceipt</span>(<span style="color:#e6db74">&#34;0xb524e......8d511b0b&#34;</span>)
+{
+  ......
+  <span style="color:#a6e22e">shareId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x9e415fa4......94e4eef&#34;</span>,        <span style="color:#75715e">// Share ID purchased
+</span><span style="color:#75715e"></span>  ......
+}
+</code></pre></div><h4 id="3-status-of-staking-node-confirming-a-share">
+  3. Status of Staking Node confirming a share
+  <a class="anchor" href="#3-status-of-staking-node-confirming-a-share">#</a>
+</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">stake</span>.<span style="color:#a6e22e">getShare</span>(<span style="color:#e6db74">&#34;0x9e415f......94e4eef&#34;</span>)
+{
+  <span style="color:#a6e22e">addr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4ujQrFsaY......zxtnqgTsL&#34;</span>,
+  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0x9e415f......994e4eef&#34;</span>,
+  <span style="color:#a6e22e">missed</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+  <span style="color:#a6e22e">num</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">723</span>,
+  <span style="color:#a6e22e">pool</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xc48e4557......ec62af708a&#34;</span>,       <span style="color:#75715e">// StakingNode ID selected by this share
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2739073884442371600</span>,
+  <span style="color:#a6e22e">returnAmount</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">23602264528913793000</span>,       <span style="color:#75715e">// Income
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+  <span style="color:#a6e22e">total</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">730</span>,
+  <span style="color:#a6e22e">tx</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0xb524ec5......b8d511b0b&#34;</span>,
+  <span style="color:#a6e22e">voteAddr</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;4ujQrFsaYq......qWZzxtnqgTsL&#34;</span>
+}
+</code></pre></div><h2 id="return-of-principal">
+  Return of principal
+  <a class="anchor" href="#return-of-principal">#</a>
+</h2>
+<ul>
+<li>The design of ZORRO&rsquo;s Staking will not confiscate or destroy the ZORRO coins of any user.</li>
+<li>When the following happens, the principal of the shares will be returned
+<ul>
+<li>The shares that complete the voting process will be returned at the same time as the block award is given.</li>
+<li>If the shares have not been selected by any miners for more than one month, the principal will be refunded.</li>
+<li>Shares that were selected but did not respond(MISS) will be returned in the third month.</li>
+</ul>
+</li>
+<li>When the following conditions are all met, the StakingNode principal will be returned.
+<ul>
+<li>StakingNode is closed by the owner</li>
+<li>StakingNode registration completed for one month</li>
+<li>There are no more shares in the shares pool entrusted to StakingNode</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+
+  
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://Ethan-91.github.io/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://Ethan-91.github.io/zh/docs/course/how-to-staking-using-zro/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-brief-description-of-the-process-of-staking">A brief description of the process of Staking</a></li>
+    <li><a href="#solo-staking">SOLO Staking</a>
+      <ul>
+        <li><a href="#prerequisites-for-solo">Prerequisites for SOLO</a></li>
+        <li><a href="#steps">Steps</a></li>
+        <li><a href="#1-summary-of-steps">1. Summary of steps</a></li>
+        <li><a href="#2-confirm-the-asset-account">2. Confirm the asset account</a></li>
+        <li><a href="#3-create-a-voting-account">3. Create a voting account</a></li>
+        <li><a href="#4-view-the-shares-pool-status">4. View the shares pool status</a></li>
+        <li><a href="#5-subscribe-for-shares">5. Subscribe for shares</a></li>
+        <li><a href="#6-view-account-balance">6. View account balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-create-a-staking-node">How to create a Staking Node</a>
+      <ul>
+        <li><a href="#precondition">Precondition</a></li>
+        <li><a href="#steps-1">Steps</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-select-staking-node-as-a-voting-proxy-to-vote-for-yourself">How to select Staking Node as a voting proxy to vote for yourself</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#return-of-principal">Return of principal</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
